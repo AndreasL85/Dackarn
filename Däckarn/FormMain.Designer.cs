@@ -32,12 +32,13 @@
             arkivToolStripMenuItem = new ToolStripMenuItem();
             avslutaToolStripMenuItem = new ToolStripMenuItem();
             fghgfhToolStripMenuItem = new ToolStripMenuItem();
+            dfgbdfToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { arkivToolStripMenuItem, fghgfhToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { arkivToolStripMenuItem, fghgfhToolStripMenuItem, dfgbdfToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(821, 24);
@@ -64,6 +65,12 @@
             fghgfhToolStripMenuItem.Size = new Size(55, 20);
             fghgfhToolStripMenuItem.Text = "fghgfh";
             // 
+            // dfgbdfToolStripMenuItem
+            // 
+            dfgbdfToolStripMenuItem.Name = "dfgbdfToolStripMenuItem";
+            dfgbdfToolStripMenuItem.Size = new Size(155, 20);
+            dfgbdfToolStripMenuItem.Text = "chbdcgnhbfgchnfgcvhbn";
+            // 
             // FormMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -87,5 +94,6 @@
         private ToolStripMenuItem arkivToolStripMenuItem;
         private ToolStripMenuItem avslutaToolStripMenuItem;
         private ToolStripMenuItem fghgfhToolStripMenuItem;
+        private ToolStripMenuItem dfgbdfToolStripMenuItem;
     }
 }
