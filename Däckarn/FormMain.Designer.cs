@@ -31,12 +31,13 @@
             menuStrip1 = new MenuStrip();
             arkivToolStripMenuItem = new ToolStripMenuItem();
             avslutaToolStripMenuItem = new ToolStripMenuItem();
+            fghgfhToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { arkivToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { arkivToolStripMenuItem, fghgfhToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(821, 24);
@@ -53,9 +54,15 @@
             // avslutaToolStripMenuItem
             // 
             avslutaToolStripMenuItem.Name = "avslutaToolStripMenuItem";
-            avslutaToolStripMenuItem.Size = new Size(180, 22);
+            avslutaToolStripMenuItem.Size = new Size(113, 22);
             avslutaToolStripMenuItem.Text = "&Avsluta";
             avslutaToolStripMenuItem.Click += avslutaToolStripMenuItem_Click;
+            // 
+            // fghgfhToolStripMenuItem
+            // 
+            fghgfhToolStripMenuItem.Name = "fghgfhToolStripMenuItem";
+            fghgfhToolStripMenuItem.Size = new Size(55, 20);
+            fghgfhToolStripMenuItem.Text = "fghgfh";
             // 
             // FormMain
             // 
@@ -79,5 +86,6 @@
         private MenuStrip menuStrip1;
         private ToolStripMenuItem arkivToolStripMenuItem;
         private ToolStripMenuItem avslutaToolStripMenuItem;
+        private ToolStripMenuItem fghgfhToolStripMenuItem;
     }
 }
