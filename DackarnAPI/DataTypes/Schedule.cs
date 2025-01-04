@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace DackarnAPI.DataTypes
 {
-    
     public class Schedule
     {
         public const int MAX_DAYS_AHEAD = 14;
