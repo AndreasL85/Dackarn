@@ -40,7 +40,7 @@
             taBortBokningToolStripMenuItem = new ToolStripMenuItem();
             hjälpToolStripMenuItem = new ToolStripMenuItem();
             omToolStripMenuItem = new ToolStripMenuItem();
-            listView1 = new ListView();
+            listViewBookings = new ListView();
             columnDone = new ColumnHeader();
             columnName = new ColumnHeader();
             columnPremium = new ColumnHeader();
@@ -57,8 +57,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { arkivToolStripMenuItem, schemaToolStripMenuItem, bokningarToolStripMenuItem, hjälpToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Padding = new Padding(7, 3, 0, 3);
-            menuStrip1.Size = new Size(778, 30);
+            menuStrip1.Size = new Size(681, 24);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -66,13 +65,13 @@
             // 
             arkivToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { avslutaToolStripMenuItem });
             arkivToolStripMenuItem.Name = "arkivToolStripMenuItem";
-            arkivToolStripMenuItem.Size = new Size(56, 24);
+            arkivToolStripMenuItem.Size = new Size(46, 20);
             arkivToolStripMenuItem.Text = "&Arkiv";
             // 
             // avslutaToolStripMenuItem
             // 
             avslutaToolStripMenuItem.Name = "avslutaToolStripMenuItem";
-            avslutaToolStripMenuItem.Size = new Size(140, 26);
+            avslutaToolStripMenuItem.Size = new Size(113, 22);
             avslutaToolStripMenuItem.Text = "&Avsluta";
             avslutaToolStripMenuItem.Click += avslutaToolStripMenuItem_Click;
             // 
@@ -80,14 +79,14 @@
             // 
             schemaToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { hanteraSchemaToolStripMenuItem });
             schemaToolStripMenuItem.Name = "schemaToolStripMenuItem";
-            schemaToolStripMenuItem.Size = new Size(75, 24);
+            schemaToolStripMenuItem.Size = new Size(61, 20);
             schemaToolStripMenuItem.Text = "&Schema";
             // 
             // hanteraSchemaToolStripMenuItem
             // 
             hanteraSchemaToolStripMenuItem.Name = "hanteraSchemaToolStripMenuItem";
             hanteraSchemaToolStripMenuItem.ShortcutKeys = Keys.F5;
-            hanteraSchemaToolStripMenuItem.Size = new Size(225, 26);
+            hanteraSchemaToolStripMenuItem.Size = new Size(180, 22);
             hanteraSchemaToolStripMenuItem.Text = "&Hantera Schema";
             hanteraSchemaToolStripMenuItem.Click += hanteraSchemaToolStripMenuItem_Click;
             // 
@@ -95,14 +94,14 @@
             // 
             bokningarToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { läggTillBokningToolStripMenuItem, hanteraBokningarToolStripMenuItem, toolStripMenuItem1, taBortBokningToolStripMenuItem });
             bokningarToolStripMenuItem.Name = "bokningarToolStripMenuItem";
-            bokningarToolStripMenuItem.Size = new Size(90, 24);
+            bokningarToolStripMenuItem.Size = new Size(73, 20);
             bokningarToolStripMenuItem.Text = "&Bokningar";
             // 
             // läggTillBokningToolStripMenuItem
             // 
             läggTillBokningToolStripMenuItem.Name = "läggTillBokningToolStripMenuItem";
             läggTillBokningToolStripMenuItem.ShortcutKeys = Keys.F1;
-            läggTillBokningToolStripMenuItem.Size = new Size(240, 26);
+            läggTillBokningToolStripMenuItem.Size = new Size(192, 22);
             läggTillBokningToolStripMenuItem.Text = "&Lägg till Bokning";
             läggTillBokningToolStripMenuItem.Click += läggTillBokningToolStripMenuItem_Click;
             // 
@@ -110,43 +109,43 @@
             // 
             hanteraBokningarToolStripMenuItem.Name = "hanteraBokningarToolStripMenuItem";
             hanteraBokningarToolStripMenuItem.ShortcutKeys = Keys.F2;
-            hanteraBokningarToolStripMenuItem.Size = new Size(240, 26);
+            hanteraBokningarToolStripMenuItem.Size = new Size(192, 22);
             hanteraBokningarToolStripMenuItem.Text = "&Hantera Bokningar";
             // 
             // toolStripMenuItem1
             // 
             toolStripMenuItem1.Name = "toolStripMenuItem1";
-            toolStripMenuItem1.Size = new Size(237, 6);
+            toolStripMenuItem1.Size = new Size(189, 6);
             // 
             // taBortBokningToolStripMenuItem
             // 
             taBortBokningToolStripMenuItem.Name = "taBortBokningToolStripMenuItem";
-            taBortBokningToolStripMenuItem.Size = new Size(240, 26);
+            taBortBokningToolStripMenuItem.Size = new Size(192, 22);
             taBortBokningToolStripMenuItem.Text = "&Ta bort Bokning";
             // 
             // hjälpToolStripMenuItem
             // 
             hjälpToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { omToolStripMenuItem });
             hjälpToolStripMenuItem.Name = "hjälpToolStripMenuItem";
-            hjälpToolStripMenuItem.Size = new Size(59, 24);
+            hjälpToolStripMenuItem.Size = new Size(47, 20);
             hjälpToolStripMenuItem.Text = "&Hjälp";
             // 
             // omToolStripMenuItem
             // 
             omToolStripMenuItem.Name = "omToolStripMenuItem";
-            omToolStripMenuItem.Size = new Size(116, 26);
+            omToolStripMenuItem.Size = new Size(180, 22);
             omToolStripMenuItem.Text = "&Om";
+            omToolStripMenuItem.Click += omToolStripMenuItem_Click;
             // 
-            // listView1
+            // listViewBookings
             // 
-            listView1.Columns.AddRange(new ColumnHeader[] { columnDone, columnName, columnPremium, columnRegNr, columnCar });
-            listView1.Location = new Point(14, 69);
-            listView1.Margin = new Padding(3, 4, 3, 4);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(748, 373);
-            listView1.TabIndex = 1;
-            listView1.UseCompatibleStateImageBehavior = false;
-            listView1.View = View.Details;
+            listViewBookings.Columns.AddRange(new ColumnHeader[] { columnDone, columnName, columnPremium, columnRegNr, columnCar });
+            listViewBookings.Location = new Point(12, 52);
+            listViewBookings.Name = "listViewBookings";
+            listViewBookings.Size = new Size(655, 281);
+            listViewBookings.TabIndex = 1;
+            listViewBookings.UseCompatibleStateImageBehavior = false;
+            listViewBookings.View = View.Details;
             // 
             // columnDone
             // 
@@ -180,9 +179,9 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(14, 45);
+            label1.Location = new Point(12, 34);
             label1.Name = "label1";
-            label1.Size = new Size(110, 20);
+            label1.Size = new Size(87, 15);
             label1.TabIndex = 2;
             label1.Text = "Bokningar Idag";
             // 
@@ -190,24 +189,23 @@
             // 
             lblDay.AutoSize = true;
             lblDay.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            lblDay.Location = new Point(487, 32);
+            lblDay.Location = new Point(426, 24);
             lblDay.Name = "lblDay";
-            lblDay.Size = new Size(0, 32);
+            lblDay.Size = new Size(0, 25);
             lblDay.TabIndex = 3;
             lblDay.TextAlign = ContentAlignment.TopRight;
             // 
             // FormMain
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(778, 468);
+            ClientSize = new Size(681, 351);
             Controls.Add(lblDay);
             Controls.Add(label1);
-            Controls.Add(listView1);
+            Controls.Add(listViewBookings);
             Controls.Add(menuStrip1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MainMenuStrip = menuStrip1;
-            Margin = new Padding(3, 4, 3, 4);
             MaximizeBox = false;
             Name = "FormMain";
             StartPosition = FormStartPosition.CenterScreen;
@@ -224,7 +222,7 @@
         private MenuStrip menuStrip1;
         private ToolStripMenuItem arkivToolStripMenuItem;
         private ToolStripMenuItem avslutaToolStripMenuItem;
-        private ListView listView1;
+        private ListView listViewBookings;
         private Label label1;
         private ColumnHeader columnName;
         private ColumnHeader columnPremium;

@@ -8,9 +8,9 @@ namespace DackarnAPI.DataTypes
 {
     public class Car
     {
-        public string? RegistrationNumber { get; set; }
-        public string? Brand { get; set; }
-        public string? Model { get; set; }
+        public string RegistrationNumber { get; set; }
+        public string Brand { get; set; }
+        public string Model { get; set; }
         public int Year { get; set; }
         public Car(string regNumber, string brand, string model, int year)
         {

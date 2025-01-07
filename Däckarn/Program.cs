@@ -11,7 +11,8 @@ namespace Däckarn
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            GlobalDataManager.SetSchedule();
+            // Initialize Global Data Manager before we start the UI
+            GlobalDataManager.Initialize();
             Application.Run(new FormMain());
         }
     }
