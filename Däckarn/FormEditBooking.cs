@@ -128,7 +128,7 @@ namespace Däckarn
 
         private void listViewBookings_SelectedIndexChanged(object sender, EventArgs e)
         {
-            FillInForm(GetSelectedBooking());
+            FillInForm(GetSelectedBooking()!);
         }
     }
 }
