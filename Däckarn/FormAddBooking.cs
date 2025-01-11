@@ -16,6 +16,7 @@ namespace Däckarn
 {
     public partial class FormAddBooking : Form
     {
+        private DateTime bookedDate = DateTime.Now;
         public FormAddBooking()
         {
             InitializeComponent();
@@ -35,6 +36,7 @@ namespace Däckarn
         private void FormAddBooking_Load(object sender, EventArgs e)
         {
             FillYears();
+            comboBoxService.SelectedIndex = 0;
         }
 
         private void FillYears()
@@ -57,6 +59,7 @@ namespace Däckarn
             month = month[0].ToString().ToUpper() + month.Substring(1);
             string year = date.Year.ToString();
             labelBookingDate.Text = $"{dayOfWeek}, den {day} {month} {year} Kl: {date.Hour}:{date.ToString("mm")}";
+            bookedDate = date;
         }
 
         private void buttonBoka_Click(object sender, EventArgs e)
@@ -64,7 +67,17 @@ namespace Däckarn
             if(ValidateBooking())
             {
                 // We should have valid inputs here, create a new booking
-                GlobalDataManager.BookingManager.AddNewBooking(textBoxName.Text, chkPremium.Checked, textBoxRegNr.Text, textBoxBrand.Text, textBoxModel.Text, Int32.Parse(comboBoxYear.SelectedItem.ToString()));
+                int year;
+                if(!Int32.TryParse(comboBoxYear.SelectedItem.ToString(), out year))
+                {
+                    Error("Årtal var felaktigt ifyllt!");
+                    return;
+                }
+
+                GlobalDataManager.BookingManager.AddNewBooking(bookedDate, (CustomerService)comboBoxService.SelectedIndex, textBoxName.Text, chkPremium.Checked, textBoxRegNr.Text, textBoxBrand.Text, textBoxModel.Text, year);
+                GlobalDataManager.UpdateSchedule(bookedDate, false);
+                string premium = chkPremium.Checked ? "Ja" : "Nej";
+                MessageBox.Show($"Bokning genomförd!\n\nNamn: {textBoxName.Text}\nPremium Medlem: {premium}\nReg. Nr: {textBoxRegNr.Text}\nBil: {textBoxBrand.Text} {textBoxModel.Text} ({year})", "Ny Bokning!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 FormMain form = (FormMain)Owner;
                 form.UpdateBookings();
                 Close();

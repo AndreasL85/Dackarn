@@ -11,7 +11,7 @@ namespace Däckarn
     public static class GlobalDataManager
     {
         private static int year = DateTime.Now.Year;
-        private static int month = DateTime.Now.Month; 
+        private static int month = DateTime.Now.Month;
         private static int day = DateTime.Now.Day;
         public static Schedule? WorkSchedule { get; private set; }
         public static BookingManager BookingManager { get; private set; } = new BookingManager();
@@ -24,5 +24,13 @@ namespace Däckarn
                                         new DateTime(year, month, day, 13, 0, 0)); // Lunch hour 
         }
 
+
+        public static void UpdateSchedule(DateTime date, bool available)
+        {
+            if (WorkSchedule != null)
+            {
+                WorkSchedule.UpdateJobTimeFrame(date, available);
+            }
+        }
     }
 }

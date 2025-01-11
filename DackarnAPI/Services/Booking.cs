@@ -14,11 +14,12 @@ namespace DackarnAPI.Services
         public Car CustomerCar { get; internal set; }
         public DateTime BookedDate { get; set; }
         public bool Done { get; set; } = false;
-        public Booking(Customer bookedCustomer, Car customerCar)
+        public Booking(DateTime bookedDate, Customer bookedCustomer, Car customerCar)
         {
             ID = Guid.NewGuid().ToString();
             BookedCustomer = bookedCustomer;
             CustomerCar = customerCar;
+            BookedDate = bookedDate;
         }
     }
 }

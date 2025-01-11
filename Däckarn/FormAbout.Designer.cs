@@ -75,7 +75,7 @@
             logoPictureBox.Name = "logoPictureBox";
             tableLayoutPanel.SetRowSpan(logoPictureBox, 6);
             logoPictureBox.Size = new Size(152, 301);
-            logoPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            logoPictureBox.SizeMode = PictureBoxSizeMode.CenterImage;
             logoPictureBox.TabIndex = 12;
             logoPictureBox.TabStop = false;
             // 
@@ -159,12 +159,12 @@
             ClientSize = new Size(507, 327);
             Controls.Add(tableLayoutPanel);
             FormBorderStyle = FormBorderStyle.FixedDialog;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(4, 3, 4, 3);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "FormAbout";
             Padding = new Padding(10);
-            ShowIcon = false;
             ShowInTaskbar = false;
             StartPosition = FormStartPosition.CenterParent;
             Text = "Om Däckarn";

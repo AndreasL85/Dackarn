@@ -44,28 +44,27 @@
             // 
             // monthCalendar
             // 
-            monthCalendar.Location = new Point(21, 24);
-            monthCalendar.Margin = new Padding(10, 12, 10, 12);
+            monthCalendar.Location = new Point(18, 18);
             monthCalendar.Name = "monthCalendar";
             monthCalendar.TabIndex = 0;
+            monthCalendar.DateChanged += monthCalendar_DateChanged;
             monthCalendar.DateSelected += monthCalendar_DateSelected;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(21, 252);
+            label1.Location = new Point(18, 189);
             label1.Name = "label1";
-            label1.Size = new Size(43, 20);
+            label1.Size = new Size(33, 15);
             label1.TabIndex = 1;
             label1.Text = "Tider";
             // 
             // radioButton8to9
             // 
             radioButton8to9.AutoSize = true;
-            radioButton8to9.Location = new Point(21, 276);
-            radioButton8to9.Margin = new Padding(3, 4, 3, 4);
+            radioButton8to9.Location = new Point(18, 207);
             radioButton8to9.Name = "radioButton8to9";
-            radioButton8to9.Size = new Size(98, 24);
+            radioButton8to9.Size = new Size(78, 19);
             radioButton8to9.TabIndex = 2;
             radioButton8to9.TabStop = true;
             radioButton8to9.Tag = "8";
@@ -75,10 +74,9 @@
             // radioButton9to10
             // 
             radioButton9to10.AutoSize = true;
-            radioButton9to10.Location = new Point(21, 309);
-            radioButton9to10.Margin = new Padding(3, 4, 3, 4);
+            radioButton9to10.Location = new Point(18, 232);
             radioButton9to10.Name = "radioButton9to10";
-            radioButton9to10.Size = new Size(106, 24);
+            radioButton9to10.Size = new Size(84, 19);
             radioButton9to10.TabIndex = 3;
             radioButton9to10.TabStop = true;
             radioButton9to10.Tag = "9";
@@ -88,10 +86,9 @@
             // radioButton10to11
             // 
             radioButton10to11.AutoSize = true;
-            radioButton10to11.Location = new Point(21, 343);
-            radioButton10to11.Margin = new Padding(3, 4, 3, 4);
+            radioButton10to11.Location = new Point(18, 257);
             radioButton10to11.Name = "radioButton10to11";
-            radioButton10to11.Size = new Size(114, 24);
+            radioButton10to11.Size = new Size(90, 19);
             radioButton10to11.TabIndex = 4;
             radioButton10to11.TabStop = true;
             radioButton10to11.Tag = "10";
@@ -101,10 +98,9 @@
             // radioButton11to12
             // 
             radioButton11to12.AutoSize = true;
-            radioButton11to12.Location = new Point(21, 376);
-            radioButton11to12.Margin = new Padding(3, 4, 3, 4);
+            radioButton11to12.Location = new Point(18, 282);
             radioButton11to12.Name = "radioButton11to12";
-            radioButton11to12.Size = new Size(114, 24);
+            radioButton11to12.Size = new Size(90, 19);
             radioButton11to12.TabIndex = 5;
             radioButton11to12.TabStop = true;
             radioButton11to12.Tag = "11";
@@ -114,10 +110,9 @@
             // radioButton12to13
             // 
             radioButton12to13.AutoSize = true;
-            radioButton12to13.Location = new Point(21, 409);
-            radioButton12to13.Margin = new Padding(3, 4, 3, 4);
+            radioButton12to13.Location = new Point(18, 307);
             radioButton12to13.Name = "radioButton12to13";
-            radioButton12to13.Size = new Size(114, 24);
+            radioButton12to13.Size = new Size(90, 19);
             radioButton12to13.TabIndex = 6;
             radioButton12to13.TabStop = true;
             radioButton12to13.Tag = "12";
@@ -127,10 +122,9 @@
             // radioButton14to15
             // 
             radioButton14to15.AutoSize = true;
-            radioButton14to15.Location = new Point(21, 443);
-            radioButton14to15.Margin = new Padding(3, 4, 3, 4);
+            radioButton14to15.Location = new Point(18, 332);
             radioButton14to15.Name = "radioButton14to15";
-            radioButton14to15.Size = new Size(114, 24);
+            radioButton14to15.Size = new Size(90, 19);
             radioButton14to15.TabIndex = 7;
             radioButton14to15.TabStop = true;
             radioButton14to15.Tag = "14";
@@ -140,10 +134,9 @@
             // radioButton15to16
             // 
             radioButton15to16.AutoSize = true;
-            radioButton15to16.Location = new Point(21, 476);
-            radioButton15to16.Margin = new Padding(3, 4, 3, 4);
+            radioButton15to16.Location = new Point(18, 357);
             radioButton15to16.Name = "radioButton15to16";
-            radioButton15to16.Size = new Size(114, 24);
+            radioButton15to16.Size = new Size(90, 19);
             radioButton15to16.TabIndex = 8;
             radioButton15to16.TabStop = true;
             radioButton15to16.Tag = "15";
@@ -153,10 +146,9 @@
             // radioButton16to17
             // 
             radioButton16to17.AutoSize = true;
-            radioButton16to17.Location = new Point(21, 509);
-            radioButton16to17.Margin = new Padding(3, 4, 3, 4);
+            radioButton16to17.Location = new Point(18, 382);
             radioButton16to17.Name = "radioButton16to17";
-            radioButton16to17.Size = new Size(114, 24);
+            radioButton16to17.Size = new Size(90, 19);
             radioButton16to17.TabIndex = 9;
             radioButton16to17.TabStop = true;
             radioButton16to17.Tag = "16";
@@ -165,10 +157,9 @@
             // 
             // buttonPick
             // 
-            buttonPick.Location = new Point(21, 561);
-            buttonPick.Margin = new Padding(3, 4, 3, 4);
+            buttonPick.Location = new Point(18, 421);
             buttonPick.Name = "buttonPick";
-            buttonPick.Size = new Size(86, 31);
+            buttonPick.Size = new Size(75, 23);
             buttonPick.TabIndex = 10;
             buttonPick.Text = "Välj";
             buttonPick.UseVisualStyleBackColor = true;
@@ -176,9 +167,10 @@
             // 
             // buttonCancel
             // 
-            buttonCancel.Location = new Point(182, 562);
+            buttonCancel.Location = new Point(159, 422);
+            buttonCancel.Margin = new Padding(3, 2, 3, 2);
             buttonCancel.Name = "buttonCancel";
-            buttonCancel.Size = new Size(94, 29);
+            buttonCancel.Size = new Size(82, 22);
             buttonCancel.TabIndex = 11;
             buttonCancel.Text = "Avbryt";
             buttonCancel.UseVisualStyleBackColor = true;
@@ -186,9 +178,9 @@
             // 
             // FormPickDate
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(290, 607);
+            ClientSize = new Size(254, 455);
             Controls.Add(buttonCancel);
             Controls.Add(buttonPick);
             Controls.Add(radioButton16to17);
@@ -202,7 +194,6 @@
             Controls.Add(label1);
             Controls.Add(monthCalendar);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
-            Margin = new Padding(3, 4, 3, 4);
             Name = "FormPickDate";
             StartPosition = FormStartPosition.CenterParent;
             Text = "Schema";

@@ -41,7 +41,17 @@ namespace DackarnAPI.DataTypes
 
         public void UpdateTimeFrame(DateTime timeFrame, bool available)
         {
-
+            for(int i = 0; i < timeFrames.Count; i++) 
+            {
+                if(timeFrames[i].Time.Date == timeFrame.Date && timeFrames[i].Time.Hour == timeFrame.Hour)
+                {
+                    JobTimeFrame frame = new JobTimeFrame();
+                    frame.Time = timeFrames[i].Time;
+                    frame.Available = available; 
+                    timeFrames[i] = frame;
+                    break;
+                }
+            }
         }
     }
 }

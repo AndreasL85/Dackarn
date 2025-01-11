@@ -30,6 +30,28 @@ namespace DackarnAPI.DataTypes
             return currentDay.GetTimeFrames();
         }
 
+        public List<JobTimeFrame> GetAllJobTimeFrames()
+        {
+            List<JobTimeFrame> retList = new List<JobTimeFrame>();
+
+            foreach (var day in workDays)
+            {
+                retList.AddRange(day.GetTimeFrames());
+            }
+
+            return retList;
+        }
+
+        public void UpdateJobTimeFrame(DateTime date, bool available)
+        {
+            foreach(var timeFrame in workDays)
+            {
+                timeFrame.UpdateTimeFrame(date, available);
+            }
+
+            return;
+        }
+
         private List<WorkDay> GenerateSchedule()
         {
             List<WorkDay> workdayList = new List<WorkDay>();

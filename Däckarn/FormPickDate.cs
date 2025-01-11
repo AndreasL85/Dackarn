@@ -21,10 +21,22 @@ namespace Däckarn
         {
             monthCalendar.MinDate = DateTime.Now;
             monthCalendar.MaxDate = DateTime.Now.AddDays(14);
+
+            RefreshRadioButtons();
         }
 
         private void monthCalendar_DateSelected(object sender, DateRangeEventArgs e)
         {
+            RefreshRadioButtons();
+        }
+
+        private void RefreshRadioButtons()
+        {
+            if(GlobalDataManager.WorkSchedule == null)
+            {
+                return;
+            }
+
             var dates = GlobalDataManager.WorkSchedule.GetJobTimeFrames(monthCalendar.SelectionStart);
 
             foreach (var date in dates)
@@ -71,17 +83,17 @@ namespace Däckarn
 
         private void buttonPick_Click(object sender, EventArgs e)
         {
-            foreach(var control in Controls)
+            foreach (var control in Controls)
             {
-                if(control is RadioButton)
+                if (control is RadioButton)
                 {
                     var radioButton = (RadioButton)control;
-                    if(radioButton.Checked)
+                    if (radioButton.Checked)
                     {
                         DateTime dt = monthCalendar.SelectionStart;
                         string? tagString = radioButton.Tag.ToString();
 
-                        if(tagString == null)
+                        if (tagString == null)
                         {
                             return;
                         }
@@ -104,6 +116,11 @@ namespace Däckarn
         private void buttonCancel_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void monthCalendar_DateChanged(object sender, DateRangeEventArgs e)
+        {
+            RefreshRadioButtons();
         }
     }
 }

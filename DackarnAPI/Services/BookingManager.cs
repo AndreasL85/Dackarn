@@ -15,7 +15,9 @@ namespace DackarnAPI.Services
 
         }
 
-        public bool AddNewBooking(string name, 
+        public bool AddNewBooking(DateTime bookedDate,
+                                  CustomerService customerService,
+                                  string name, 
                                   bool premiumCustomer, 
                                   string registrationNumber, 
                                   string carBrand, 
@@ -23,9 +25,10 @@ namespace DackarnAPI.Services
                                   int carYear)
         {
             Customer customer = new Customer(name, premiumCustomer);
+            customer.Service = customerService;
             Car car = new Car(registrationNumber, carBrand, carModel, carYear);
 
-            Booking booking = new Booking(customer, car);
+            Booking booking = new Booking(bookedDate, customer, car);
 
             bookings.Add(booking);
 
@@ -72,10 +75,32 @@ namespace DackarnAPI.Services
             return true;
         }
 
-        public Booking GetBooking(DateTime timeAndDate)
+        public Booking? GetBooking(DateTime dateTime)
         {
-            // TODO: return correct booking
-            return bookings[0];
+            foreach (var booking in bookings)
+            {
+                if (booking.BookedDate == dateTime)
+                {
+                    return booking;
+                }
+            }
+
+            return null;
+        }
+
+        public List<Booking> GetBookingsByDate(DateTime timeAndDate)
+        {
+            var retList = new List<Booking>();
+
+            foreach (var booking in bookings)
+            {
+                if(booking.BookedDate.Date == timeAndDate.Date)
+                {
+                    retList.Add(booking);
+                }
+            }
+
+            return retList;
         }
 
         public List<Booking> GetAllBookings() 
