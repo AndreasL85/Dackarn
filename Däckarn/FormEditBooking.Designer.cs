@@ -222,8 +222,10 @@
             // listViewBookings
             // 
             listViewBookings.Columns.AddRange(new ColumnHeader[] { columnDate, columnDone, columnName, columnPremium, columnRegNr, columnCar });
+            listViewBookings.FullRowSelect = true;
             listViewBookings.GridLines = true;
             listViewBookings.Location = new Point(10, 11);
+            listViewBookings.MultiSelect = false;
             listViewBookings.Name = "listViewBookings";
             listViewBookings.Size = new Size(794, 507);
             listViewBookings.TabIndex = 33;
@@ -297,6 +299,7 @@
             Name = "FormEditBooking";
             StartPosition = FormStartPosition.CenterParent;
             Text = "Redigera Bokning";
+            FormClosing += FormEditBooking_FormClosing;
             Load += FormEditBooking_Load;
             ResumeLayout(false);
             PerformLayout();

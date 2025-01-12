@@ -150,8 +150,6 @@ namespace Däckarn
         {
             if (ValidateBooking())
             {
-
-
                 var booking = GetSelectedBooking();
                 if (booking == null)
                 {
@@ -164,7 +162,7 @@ namespace Däckarn
                     Error("Årtal var felaktigt ifyllt!");
                     return;
                 }
-
+                GlobalDataManager.UpdateSchedule(booking.BookedDate, true);
                 GlobalDataManager.BookingManager.EditBooking(booking.ID, bookedDate, (CustomerService)comboBoxService.SelectedIndex, textBoxName.Text, chkPremium.Checked, textBoxRegNr.Text, textBoxBrand.Text, textBoxModel.Text, year);
                 GlobalDataManager.UpdateSchedule(bookedDate, false);
                 UpdateBookings();
@@ -271,6 +269,12 @@ namespace Däckarn
         private void Error(string message)
         {
             MessageBox.Show(message, "Fel!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void FormEditBooking_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            FormMain formMain = (FormMain)Owner;
+            formMain.UpdateBookings();
         }
     }
 }

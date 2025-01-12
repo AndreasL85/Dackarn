@@ -60,15 +60,16 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { arkivToolStripMenuItem, schemaToolStripMenuItem, bokningarToolStripMenuItem, hjälpToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(819, 24);
+            menuStrip1.Size = new Size(819, 28);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
             // arkivToolStripMenuItem
             // 
             arkivToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { avslutaToolStripMenuItem });
+            arkivToolStripMenuItem.Image = Properties.Resources.icons8_tire_64;
             arkivToolStripMenuItem.Name = "arkivToolStripMenuItem";
-            arkivToolStripMenuItem.Size = new Size(46, 20);
+            arkivToolStripMenuItem.Size = new Size(66, 24);
             arkivToolStripMenuItem.Text = "&Arkiv";
             // 
             // avslutaToolStripMenuItem
@@ -81,23 +82,25 @@
             // schemaToolStripMenuItem
             // 
             schemaToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { hanteraSchemaToolStripMenuItem });
+            schemaToolStripMenuItem.Image = Properties.Resources.icons8_schedule_80;
             schemaToolStripMenuItem.Name = "schemaToolStripMenuItem";
-            schemaToolStripMenuItem.Size = new Size(61, 20);
+            schemaToolStripMenuItem.Size = new Size(81, 24);
             schemaToolStripMenuItem.Text = "&Schema";
             // 
             // hanteraSchemaToolStripMenuItem
             // 
             hanteraSchemaToolStripMenuItem.Name = "hanteraSchemaToolStripMenuItem";
             hanteraSchemaToolStripMenuItem.ShortcutKeys = Keys.F5;
-            hanteraSchemaToolStripMenuItem.Size = new Size(159, 22);
+            hanteraSchemaToolStripMenuItem.Size = new Size(180, 22);
             hanteraSchemaToolStripMenuItem.Text = "&Visa Schema";
             hanteraSchemaToolStripMenuItem.Click += hanteraSchemaToolStripMenuItem_Click;
             // 
             // bokningarToolStripMenuItem
             // 
             bokningarToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { läggTillBokningToolStripMenuItem, hanteraBokningarToolStripMenuItem, toolStripMenuItem1, taBortBokningToolStripMenuItem });
+            bokningarToolStripMenuItem.Image = Properties.Resources.icons8_booking_64;
             bokningarToolStripMenuItem.Name = "bokningarToolStripMenuItem";
-            bokningarToolStripMenuItem.Size = new Size(73, 20);
+            bokningarToolStripMenuItem.Size = new Size(93, 24);
             bokningarToolStripMenuItem.Text = "&Bokningar";
             // 
             // läggTillBokningToolStripMenuItem
@@ -132,22 +135,25 @@
             // hjälpToolStripMenuItem
             // 
             hjälpToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { omToolStripMenuItem });
+            hjälpToolStripMenuItem.Image = Properties.Resources.icons8_help_50;
             hjälpToolStripMenuItem.Name = "hjälpToolStripMenuItem";
-            hjälpToolStripMenuItem.Size = new Size(47, 20);
+            hjälpToolStripMenuItem.Size = new Size(67, 24);
             hjälpToolStripMenuItem.Text = "&Hjälp";
             // 
             // omToolStripMenuItem
             // 
             omToolStripMenuItem.Name = "omToolStripMenuItem";
-            omToolStripMenuItem.Size = new Size(94, 22);
+            omToolStripMenuItem.Size = new Size(180, 22);
             omToolStripMenuItem.Text = "&Om";
             omToolStripMenuItem.Click += omToolStripMenuItem_Click;
             // 
             // listViewBookings
             // 
             listViewBookings.Columns.AddRange(new ColumnHeader[] { columnDate, columnDone, columnName, columnPremium, columnRegNr, columnCar });
+            listViewBookings.FullRowSelect = true;
             listViewBookings.GridLines = true;
             listViewBookings.Location = new Point(12, 52);
+            listViewBookings.MultiSelect = false;
             listViewBookings.Name = "listViewBookings";
             listViewBookings.Size = new Size(794, 359);
             listViewBookings.Sorting = SortOrder.Ascending;

@@ -42,8 +42,10 @@
             // listViewBookings
             // 
             listViewBookings.Columns.AddRange(new ColumnHeader[] { columnDate, columnDone, columnName, columnPremium, columnRegNr, columnCar });
+            listViewBookings.FullRowSelect = true;
             listViewBookings.GridLines = true;
             listViewBookings.Location = new Point(12, 12);
+            listViewBookings.MultiSelect = false;
             listViewBookings.Name = "listViewBookings";
             listViewBookings.Size = new Size(794, 507);
             listViewBookings.TabIndex = 2;
