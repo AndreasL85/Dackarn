@@ -60,14 +60,14 @@
             // 
             comboBoxYear.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxYear.FormattingEnabled = true;
-            comboBoxYear.Location = new Point(812, 259);
+            comboBoxYear.Location = new Point(810, 258);
             comboBoxYear.Name = "comboBoxYear";
             comboBoxYear.Size = new Size(257, 23);
             comboBoxYear.TabIndex = 23;
             // 
             // buttonCancel
             // 
-            buttonCancel.Location = new Point(812, 496);
+            buttonCancel.Location = new Point(810, 495);
             buttonCancel.Name = "buttonCancel";
             buttonCancel.Size = new Size(257, 23);
             buttonCancel.TabIndex = 29;
@@ -77,26 +77,28 @@
             // 
             // buttonUpdateBooking
             // 
-            buttonUpdateBooking.Location = new Point(812, 412);
+            buttonUpdateBooking.Location = new Point(810, 411);
             buttonUpdateBooking.Name = "buttonUpdateBooking";
             buttonUpdateBooking.Size = new Size(255, 23);
             buttonUpdateBooking.TabIndex = 27;
             buttonUpdateBooking.Text = "Uppdatera";
             buttonUpdateBooking.UseVisualStyleBackColor = true;
+            buttonUpdateBooking.Click += buttonUpdateBooking_Click;
             // 
             // buttonPickDate
             // 
-            buttonPickDate.Location = new Point(986, 344);
+            buttonPickDate.Location = new Point(984, 343);
             buttonPickDate.Name = "buttonPickDate";
             buttonPickDate.Size = new Size(83, 23);
             buttonPickDate.TabIndex = 26;
             buttonPickDate.Text = "Välj datum";
             buttonPickDate.UseVisualStyleBackColor = true;
+            buttonPickDate.Click += buttonPickDate_Click;
             // 
             // labelBookingDate
             // 
             labelBookingDate.AutoSize = true;
-            labelBookingDate.Location = new Point(12, 376);
+            labelBookingDate.Location = new Point(812, 377);
             labelBookingDate.Name = "labelBookingDate";
             labelBookingDate.Size = new Size(0, 15);
             labelBookingDate.TabIndex = 32;
@@ -104,7 +106,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(812, 350);
+            label7.Location = new Point(810, 349);
             label7.Name = "label7";
             label7.Size = new Size(46, 15);
             label7.TabIndex = 31;
@@ -115,7 +117,7 @@
             comboBoxService.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxService.FormattingEnabled = true;
             comboBoxService.Items.AddRange(new object[] { "Däckbyte (Nya Däck)", "Däckhotell inkl. Hjulbyte", "Hjulbyte till Vinterdäck", "Hjulbyte till Sommardäck", "Hjulinställning" });
-            comboBoxService.Location = new Point(812, 306);
+            comboBoxService.Location = new Point(810, 305);
             comboBoxService.Name = "comboBoxService";
             comboBoxService.Size = new Size(257, 23);
             comboBoxService.TabIndex = 24;
@@ -123,7 +125,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(812, 288);
+            label6.Location = new Point(810, 287);
             label6.Name = "label6";
             label6.Size = new Size(41, 15);
             label6.TabIndex = 30;
@@ -132,7 +134,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(812, 241);
+            label5.Location = new Point(810, 240);
             label5.Name = "label5";
             label5.Size = new Size(64, 15);
             label5.TabIndex = 28;
@@ -140,7 +142,7 @@
             // 
             // textBoxModel
             // 
-            textBoxModel.Location = new Point(812, 212);
+            textBoxModel.Location = new Point(810, 211);
             textBoxModel.Name = "textBoxModel";
             textBoxModel.Size = new Size(257, 23);
             textBoxModel.TabIndex = 22;
@@ -149,7 +151,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(812, 194);
+            label4.Location = new Point(810, 193);
             label4.Name = "label4";
             label4.Size = new Size(60, 15);
             label4.TabIndex = 25;
@@ -157,7 +159,7 @@
             // 
             // textBoxBrand
             // 
-            textBoxBrand.Location = new Point(812, 165);
+            textBoxBrand.Location = new Point(810, 164);
             textBoxBrand.Name = "textBoxBrand";
             textBoxBrand.Size = new Size(257, 23);
             textBoxBrand.TabIndex = 20;
@@ -166,7 +168,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(812, 147);
+            label3.Location = new Point(810, 146);
             label3.Name = "label3";
             label3.Size = new Size(56, 15);
             label3.TabIndex = 21;
@@ -174,7 +176,7 @@
             // 
             // textBoxRegNr
             // 
-            textBoxRegNr.Location = new Point(812, 118);
+            textBoxRegNr.Location = new Point(810, 117);
             textBoxRegNr.MaxLength = 6;
             textBoxRegNr.Name = "textBoxRegNr";
             textBoxRegNr.Size = new Size(257, 23);
@@ -184,7 +186,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(812, 100);
+            label2.Location = new Point(810, 99);
             label2.Name = "label2";
             label2.Size = new Size(198, 15);
             label2.TabIndex = 18;
@@ -193,7 +195,7 @@
             // chkPremium
             // 
             chkPremium.AutoSize = true;
-            chkPremium.Location = new Point(812, 59);
+            chkPremium.Location = new Point(810, 58);
             chkPremium.Name = "chkPremium";
             chkPremium.Size = new Size(106, 19);
             chkPremium.TabIndex = 17;
@@ -202,7 +204,7 @@
             // 
             // textBoxName
             // 
-            textBoxName.Location = new Point(812, 30);
+            textBoxName.Location = new Point(810, 29);
             textBoxName.Name = "textBoxName";
             textBoxName.Size = new Size(257, 23);
             textBoxName.TabIndex = 16;
@@ -211,7 +213,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(812, 12);
+            label1.Location = new Point(810, 11);
             label1.Name = "label1";
             label1.Size = new Size(43, 15);
             label1.TabIndex = 15;
@@ -221,7 +223,7 @@
             // 
             listViewBookings.Columns.AddRange(new ColumnHeader[] { columnDate, columnDone, columnName, columnPremium, columnRegNr, columnCar });
             listViewBookings.GridLines = true;
-            listViewBookings.Location = new Point(12, 12);
+            listViewBookings.Location = new Point(10, 11);
             listViewBookings.Name = "listViewBookings";
             listViewBookings.Size = new Size(794, 507);
             listViewBookings.TabIndex = 33;

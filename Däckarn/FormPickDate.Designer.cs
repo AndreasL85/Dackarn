@@ -196,7 +196,7 @@
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "FormPickDate";
             StartPosition = FormStartPosition.CenterParent;
-            Text = "Schema";
+            Text = "Välj datum";
             Load += FormPickDate_Load;
             ResumeLayout(false);
             PerformLayout();

@@ -102,10 +102,20 @@ namespace Däckarn
                         TimeSpan newTime = new TimeSpan(time, 0, 0);
 
                         dt = dt.Date + newTime;
-                        FormAddBooking parent = (FormAddBooking)Owner;
-                        parent.SetBookingDate(dt);
-                        Close();
-                        return;
+                        if (Owner is FormAddBooking)
+                        {
+                            FormAddBooking parent = (FormAddBooking)Owner;
+                            parent.SetBookingDate(dt);
+                            Close();
+                            return;
+                        }
+                        else if (Owner is FormEditBooking)
+                        {
+                            FormEditBooking parent = (FormEditBooking)Owner;
+                            parent.SetBookingDate(dt);
+                            Close();
+                            return;
+                        }
                     }
                 }
             }

@@ -49,16 +49,17 @@ namespace DackarnAPI.Services
             return true;
         }
 
-        public bool EditBooking(string bookingID,
-                                DateTime bookedDate,
-                                string name,
-                                bool premiumCustomer,
-                                string registrationNumber,
-                                string carBrand,
-                                string carModel,
-                                int carYear)
+        public bool EditBooking(string ID, 
+                                  DateTime bookedDate,
+                                  CustomerService customerService,
+                                  string name,
+                                  bool premiumCustomer,
+                                  string registrationNumber,
+                                  string carBrand,
+                                  string carModel,
+                                  int carYear)
         {
-            var bookingIndex = bookings.Find(booking => booking.ID == bookingID);
+            var bookingIndex = bookings.Find(booking => booking.ID == ID);
 
             if (bookingIndex == null)
             {
@@ -66,12 +67,13 @@ namespace DackarnAPI.Services
             }
 
             Customer customer = new Customer(name, premiumCustomer);
+            customer.Service = customerService;
             Car car = new Car(registrationNumber, carBrand, carModel, carYear);
 
             bookingIndex.CustomerCar = car;
             bookingIndex.BookedCustomer = customer;
             bookingIndex.BookedDate = bookedDate;
-
+            bookingIndex.Done = false;
             return true;
         }
 
