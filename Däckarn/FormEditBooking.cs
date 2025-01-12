@@ -153,7 +153,7 @@ namespace Däckarn
                 var booking = GetSelectedBooking();
                 if (booking == null)
                 {
-                    MessageBox.Show("Kunde inte uppdatera bokningen!/nMarkera bokningen och försök igen.", "Fel!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Kunde inte uppdatera bokningen!\nMarkera bokningen och försök igen.", "Fel!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 int year;
@@ -167,6 +167,7 @@ namespace Däckarn
                 GlobalDataManager.UpdateSchedule(bookedDate, false);
                 UpdateBookings();
                 MessageBox.Show("Bokning uppdaterad!", "Bokning uppdaterad!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                FillInForm(null!);
             }
         }
         private bool ValidateBooking()

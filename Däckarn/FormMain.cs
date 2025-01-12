@@ -88,6 +88,7 @@ namespace Däckarn
             {
                 booking.Done = true;
             }
+            UpdateBookings();
         }
 
         private Booking? GetSelectedBooking()
