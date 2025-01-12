@@ -1,10 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
-  <Class Name="Däckarn.GlobalDataManager">
-    <Position X="3.5" Y="2.75" Width="3.75" />
+  <Class Name="Däckarn.FormAddBooking">
+    <Position X="0.5" Y="0.5" Width="6.5" />
     <TypeIdentifier>
-      <HashCode>AAAkAAAAAAAAAQIAAAAAAAAAAAQAAAAAQAAAAAAAEAA=</HashCode>
-      <FileName>GlobalDataManager.cs</FileName>
+      <HashCode>CAAAAAAAICAAARAQEACARAAKGAAJECAAACADAACAAiQ=</HashCode>
+      <FileName>FormAddBooking.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Däckarn.FormAbout">
+    <Position X="7" Y="0.5" Width="4.25" />
+    <TypeIdentifier>
+      <HashCode>kIAAAAgAACAgCAUAAACAAAADAAAAEIAAAAAAAAAAAAA=</HashCode>
+      <FileName>FormAbout.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
