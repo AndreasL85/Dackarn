@@ -8,8 +8,8 @@ namespace DackarnAPI.DataTypes
 {
     public struct JobTimeFrame
     {
-        public bool Available;
-        public DateTime Time;
+        public bool Available { get; set; }
+        public DateTime Time { get; set; }
     }
 
     internal class WorkDay

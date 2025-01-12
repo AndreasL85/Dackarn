@@ -1,21 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
   <Class Name="Däckarn.FormAddBooking">
-    <Position X="15.25" Y="6.25" Width="4" />
+    <Position X="11" Y="0.5" Width="4" />
     <TypeIdentifier>
       <HashCode>CAAAAAAAICAAARAQEACARAAKGAAJECAAACADAACAAiQ=</HashCode>
       <FileName>FormAddBooking.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Däckarn.FormAbout">
-    <Position X="11.5" Y="6.75" Width="2.75" />
+    <Position X="24.5" Y="0.5" Width="2.75" />
     <TypeIdentifier>
       <HashCode>kIAAAAgAACAgCAUAAACAAAADAAAAEIAAAAAAAAAAAAA=</HashCode>
       <FileName>FormAbout.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Däckarn.GlobalDataManager">
-    <Position X="11.75" Y="2.5" Width="3.75" />
+    <Position X="11" Y="8.5" Width="3.75" />
     <TypeIdentifier>
       <HashCode>AAAkAAAAAAAAAQIAAAAAAAAAAAQAAAAAQAAAAAAAEAA=</HashCode>
       <FileName>GlobalDataManager.cs</FileName>
@@ -29,52 +29,52 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Däckarn.FormPickDate">
-    <Position X="20.5" Y="9" Width="5" />
+    <Position X="15.25" Y="0.5" Width="5" />
     <TypeIdentifier>
       <HashCode>AQgAQAKEACAAJBAAAACAhAACEAAAgAAAQAAIIAACggA=</HashCode>
       <FileName>FormPickDate.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Däckarn.FormSchedule">
-    <Position X="19" Y="2.5" Width="3.75" />
+    <Position X="20.5" Y="0.5" Width="3.75" />
     <TypeIdentifier>
       <HashCode>AAAAKAAAAiACAAAAAACAAAACAQBIAAAAAEBAAAAABAA=</HashCode>
       <FileName>FormSchedule.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="DackarnAPI.Services.BookingManager">
-    <Position X="14.75" Y="0.5" Width="11.75" />
+    <Position X="15.25" Y="6.5" Width="11.75" />
     <TypeIdentifier />
   </Class>
   <Class Name="Däckarn.FormEditBooking">
-    <Position X="5.75" Y="4.75" Width="5" />
+    <Position X="5.75" Y="0.5" Width="5" />
     <TypeIdentifier>
       <HashCode>CAAAIAAAAyACARASkACARAAKGQBIFEAEQCBDACCABiQ=</HashCode>
       <FileName>FormEditBooking.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="DackarnAPI.Services.Booking">
-    <Position X="23" Y="4.25" Width="5" />
+    <Position X="7.75" Y="11.5" Width="5" />
     <TypeIdentifier />
   </Class>
   <Class Name="DackarnAPI.DataTypes.Schedule">
-    <Position X="12" Y="12.5" Width="5.75" />
+    <Position X="15.25" Y="9" Width="5.75" />
     <TypeIdentifier />
   </Class>
   <Class Name="DackarnAPI.DataTypes.JobTimeFrame">
-    <Position X="19.75" Y="7" Width="1.5" />
+    <Position X="20.5" Y="5" Width="1.5" />
     <TypeIdentifier />
   </Class>
   <Class Name="DackarnAPI.DataTypes.Car">
-    <Position X="22.25" Y="6.75" Width="4" />
+    <Position X="3.5" Y="11.5" Width="4" />
     <TypeIdentifier />
   </Class>
   <Class Name="DackarnAPI.DataTypes.CustomerService">
-    <Position X="6" Y="2.5" Width="2.75" />
+    <Position X="0.5" Y="11.5" Width="2.75" />
     <TypeIdentifier />
   </Class>
   <Class Name="DackarnAPI.DataTypes.Customer">
-    <Position X="6" Y="0.5" Width="3.75" />
+    <Position X="0.5" Y="9.25" Width="3.75" />
     <TypeIdentifier />
   </Class>
   <Font Name="Segoe UI" Size="9" />
