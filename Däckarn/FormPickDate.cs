@@ -1,4 +1,13 @@
-﻿using System;
+﻿/*
+ * Projektarbete i Objektorienterad programmering GIK299, HT24
+ * 
+ * Däckarn
+ * 
+ * Andreas Lindström
+ * Ameer Abdelakhwa
+ * 
+ */
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,6 +28,7 @@ namespace Däckarn
 
         private void FormPickDate_Load(object sender, EventArgs e)
         {
+            // Make sure we can only book 14 days ahead, we just picked a number out of the blue
             monthCalendar.MinDate = DateTime.Now;
             monthCalendar.MaxDate = DateTime.Now.AddDays(14);
 
@@ -30,6 +40,7 @@ namespace Däckarn
             RefreshRadioButtons();
         }
 
+        // Update all radio buttons
         private void RefreshRadioButtons()
         {
             if(GlobalDataManager.WorkSchedule == null)
@@ -37,16 +48,20 @@ namespace Däckarn
                 return;
             }
 
-            var dates = GlobalDataManager.WorkSchedule.GetJobTimeFrames(monthCalendar.SelectionStart);
+            var jobTimeFrames = GlobalDataManager.WorkSchedule.GetJobTimeFrames(monthCalendar.SelectionStart);
 
-            foreach (var date in dates)
+            // Go over each timeFrame for the day
+            foreach (var timeFrame in jobTimeFrames)
             {
-                UpdateRadioEnabled(date.Time.Hour, date.Available);
+                // If the timeframe is available, set the radioButton that represents that time, to enabled
+                // Or disabled if not available.
+                UpdateRadioEnabled(timeFrame.Time.Hour, timeFrame.Available);
             }
         }
 
         private void UpdateRadioEnabled(int hour, bool enabled = true)
         {
+            // Make sure we are within JobTimeFrame limits, hardcoded values here...
             if (hour < 8 || hour > 17 || hour == 13)
             {
                 return;
@@ -83,8 +98,11 @@ namespace Däckarn
 
         private void buttonPick_Click(object sender, EventArgs e)
         {
+            // Validate the input of the radioButtons
+            // Loop through all Controls in the form
             foreach (var control in Controls)
             {
+                // Make sure it is of the type RadioButton
                 if (control is RadioButton)
                 {
                     var radioButton = (RadioButton)control;
@@ -93,33 +111,40 @@ namespace Däckarn
                         DateTime dt = monthCalendar.SelectionStart;
                         string? tagString = radioButton.Tag.ToString();
 
+                        // We have gotten an unknown RadioButton here, return
                         if (tagString == null)
                         {
                             return;
                         }
 
+                        // Parse the Tag value to an int to represent which JobTimeFrame is selected
                         int time = Int32.Parse(tagString);
                         TimeSpan newTime = new TimeSpan(time, 0, 0);
 
                         dt = dt.Date + newTime;
+
+                        // We use this form from 2 different Forms
+                        // Figure out which form called us...
+                        // Then call the SetBookingDate() method from that form
                         if (Owner is FormAddBooking)
                         {
                             FormAddBooking parent = (FormAddBooking)Owner;
                             parent.SetBookingDate(dt);
-                            Close();
-                            return;
                         }
                         else if (Owner is FormEditBooking)
                         {
                             FormEditBooking parent = (FormEditBooking)Owner;
                             parent.SetBookingDate(dt);
-                            Close();
-                            return;
                         }
+
+                        // We are done here, close and return from the method.
+                        Close();
+                        return;
                     }
                 }
             }
 
+            // No time was selected, notify the user
             MessageBox.Show("Välj en tid som du vill boka!", "Schema", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 

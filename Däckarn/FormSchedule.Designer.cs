@@ -37,17 +37,18 @@
             columnRegNr = new ColumnHeader();
             columnCar = new ColumnHeader();
             button1 = new Button();
+            columnService = new ColumnHeader();
             SuspendLayout();
             // 
             // listViewBookings
             // 
-            listViewBookings.Columns.AddRange(new ColumnHeader[] { columnDate, columnDone, columnName, columnPremium, columnRegNr, columnCar });
+            listViewBookings.Columns.AddRange(new ColumnHeader[] { columnDate, columnDone, columnName, columnPremium, columnService, columnRegNr, columnCar });
             listViewBookings.FullRowSelect = true;
             listViewBookings.GridLines = true;
             listViewBookings.Location = new Point(12, 12);
             listViewBookings.MultiSelect = false;
             listViewBookings.Name = "listViewBookings";
-            listViewBookings.Size = new Size(794, 507);
+            listViewBookings.Size = new Size(859, 507);
             listViewBookings.TabIndex = 2;
             listViewBookings.UseCompatibleStateImageBehavior = false;
             listViewBookings.View = View.Details;
@@ -67,7 +68,7 @@
             // 
             columnName.Text = "Namn";
             columnName.TextAlign = HorizontalAlignment.Center;
-            columnName.Width = 250;
+            columnName.Width = 190;
             // 
             // columnPremium
             // 
@@ -89,7 +90,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(372, 527);
+            button1.Location = new Point(407, 527);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 3;
@@ -97,11 +98,16 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // columnService
+            // 
+            columnService.Text = "Tjänst";
+            columnService.Width = 120;
+            // 
             // FormSchedule
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(817, 562);
+            ClientSize = new Size(886, 562);
             Controls.Add(button1);
             Controls.Add(listViewBookings);
             FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -125,5 +131,6 @@
         private ColumnHeader columnRegNr;
         private ColumnHeader columnCar;
         private Button button1;
+        private ColumnHeader columnService;
     }
 }

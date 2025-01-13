@@ -1,4 +1,13 @@
-﻿using DackarnAPI.DataTypes;
+﻿/*
+ * Projektarbete i Objektorienterad programmering GIK299, HT24
+ * 
+ * Däckarn
+ * 
+ * Andreas Lindström
+ * Ameer Abdelakhwa
+ * 
+ */
+using DackarnAPI.DataTypes;
 using DackarnAPI.Services;
 using System;
 using System.Collections.Generic;
@@ -21,13 +30,18 @@ namespace Däckarn
         {
             InitializeComponent();
         }
+
+        // Update booked date
         private void UpdateDate(DateTime newDate)
         {
             bookedDate = newDate;
 
         }
-        public void FillInForm(Booking booking)
+
+        // Fill in the input fields in the form
+        public void FillInForm(Booking? booking)
         {
+            // If booking is null, clear the fields and set values to the default
             if (booking == null)
             {
                 textBoxName.Text = string.Empty;
@@ -40,6 +54,7 @@ namespace Däckarn
             }
             else
             {
+                // Else fill in the fields with the booking information
                 textBoxName.Text = booking.BookedCustomer.Name;
                 chkPremium.Checked = booking.BookedCustomer.PremiumCustomer ? true : false;
                 textBoxRegNr.Text = booking.CustomerCar.RegistrationNumber;
@@ -47,10 +62,12 @@ namespace Däckarn
                 textBoxModel.Text = booking.CustomerCar.Model;
                 comboBoxYear.Text = booking.CustomerCar.Year.ToString();
                 comboBoxService.SelectedIndex = (int)booking.BookedCustomer.Service;
+                // Set the booking date
                 SetBookingDate(booking.BookedDate);
             }
         }
 
+        // Sets the booking date
         public void SetBookingDate(DateTime date)
         {
             CultureInfo culture = CultureInfo.CurrentCulture;
@@ -64,6 +81,7 @@ namespace Däckarn
             UpdateDate(date);
         }
 
+        // Fill in the years 1930 up to the current year in the comboBoxYear
         private void FillYears()
         {
             for (int i = 1930; i <= DateTime.Now.Year; i++)
@@ -74,6 +92,7 @@ namespace Däckarn
             comboBoxYear.SelectedIndex = comboBoxYear.Items.Count - 1;
         }
 
+        // Update the listview with bookings and available JobTimeFrames
         public void UpdateBookings()
         {
             listViewBookings.Items.Clear();
@@ -83,8 +102,11 @@ namespace Däckarn
                 return;
             }
 
+            // Loop through each JobTimeFrame
             foreach (var jobFrame in GlobalDataManager.WorkSchedule.GetAllJobTimeFrames())
             {
+                // If available, this means that we have no booking here
+                // Only display the JobTimeFrame with it's Date and Time
                 if (jobFrame.Available)
                 {
                     ListViewItem item = new ListViewItem(jobFrame.Time.ToString("yyyy/MM/dd HH:mm"));
@@ -92,17 +114,22 @@ namespace Däckarn
                 }
                 else
                 {
+                    // If it's not available, there is a booking, get the booking for the specific JobTimeFrame
                     var booking = GlobalDataManager.BookingManager.GetBooking(jobFrame.Time);
 
                     if (booking == null)
                     {
+                        // This should never happen, but it happend one time during development
+                        // So we keep it just to guard for eventual bugs.
                         throw new Exception("Critical Error! Corrupt booking data!");
                     }
 
+                    // Add a ListViewItem to the list with the booking information
                     ListViewItem item = new ListViewItem(booking.BookedDate.ToString("yyyy/MM/dd HH:mm"));
                     item.SubItems.Add(booking.Done ? "Utförd" : "Ej Utförd");
                     item.SubItems.Add(booking.BookedCustomer.Name);
                     item.SubItems.Add(booking.BookedCustomer.PremiumCustomer ? "Ja" : "Nej");
+                    item.SubItems.Add(booking.BookedCustomer.GetCustomerServiceString());
                     item.SubItems.Add($"{booking.CustomerCar.RegistrationNumber.ToUpper()}");
                     item.SubItems.Add($"{booking.CustomerCar.Brand} {booking.CustomerCar.Model} ({booking.CustomerCar.Year})");
                     listViewBookings.Items.Add(item);
@@ -110,6 +137,7 @@ namespace Däckarn
             }
         }
 
+        // Helper method to get the selected booking from the listview
         private Booking? GetSelectedBooking()
         {
             if (listViewBookings.SelectedItems.Count > 0)
@@ -130,13 +158,15 @@ namespace Däckarn
 
         private void FormEditBooking_Load(object sender, EventArgs e)
         {
+            // Update necessary fields in the forms
             FillYears();
             UpdateBookings();
         }
 
         private void listViewBookings_SelectedIndexChanged(object sender, EventArgs e)
         {
-            FillInForm(GetSelectedBooking()!);
+            // Update the inputfields on the form with the selected items booking information, if any
+            FillInForm(GetSelectedBooking());
         }
 
         private void buttonPickDate_Click(object sender, EventArgs e)
@@ -148,28 +178,39 @@ namespace Däckarn
 
         private void buttonUpdateBooking_Click(object sender, EventArgs e)
         {
+            // Validate input for the booking
             if (ValidateBooking())
             {
                 var booking = GetSelectedBooking();
+
+                // Make sure we got a booking selected
                 if (booking == null)
                 {
                     MessageBox.Show("Kunde inte uppdatera bokningen!\nMarkera bokningen och försök igen.", "Fel!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
+
                 int year;
                 if (!Int32.TryParse(comboBoxYear.SelectedItem.ToString(), out year))
                 {
                     Error("Årtal var felaktigt ifyllt!");
                     return;
                 }
+
+                // Update the old booking and set it to available, in case we changed the date
                 GlobalDataManager.UpdateSchedule(booking.BookedDate, true);
+                // Edit the booking with the new information
                 GlobalDataManager.BookingManager.EditBooking(booking.ID, bookedDate, (CustomerService)comboBoxService.SelectedIndex, textBoxName.Text, chkPremium.Checked, textBoxRegNr.Text, textBoxBrand.Text, textBoxModel.Text, year);
+                // Make the new edited booking unavailable for booking
                 GlobalDataManager.UpdateSchedule(bookedDate, false);
                 UpdateBookings();
+                // Notify the user that the booking has been updated
                 MessageBox.Show("Bokning uppdaterad!", "Bokning uppdaterad!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                FillInForm(null!);
+                // Clear the input fields
+                FillInForm(null);
             }
         }
+        // These validation methods are the exact same as those in FormAddBooking
         private bool ValidateBooking()
         {
             if (!ValidateTextBox(textBoxName))
@@ -267,6 +308,7 @@ namespace Däckarn
             return isValid;
         }
 
+        // Helper method to display error messages to the user
         private void Error(string message)
         {
             MessageBox.Show(message, "Fel!", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -276,6 +318,28 @@ namespace Däckarn
         {
             FormMain formMain = (FormMain)Owner;
             formMain.UpdateBookings();
+        }
+
+        private void buttonRemoveBooking_Click(object sender, EventArgs e)
+        {
+            // Get the selected booking object
+            var booking = GetSelectedBooking();
+
+            if (booking == null)
+            {
+                return;
+            }
+
+            // Show a confirmation box, to make sure you want to remove the booking
+            if (MessageBox.Show($"Är du säker på att du vill ta bort {booking.BookedCustomer.Name}'s bokning?", "Ta bort bokning!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                // Set the schedule JobTimeFrame to available, because it is being removed.
+                GlobalDataManager.UpdateSchedule(booking.BookedDate, true);
+                // Remove the actual booking from the system
+                GlobalDataManager.BookingManager.RemoveBooking(booking.ID);
+                // Update the bookings list for the day
+                UpdateBookings();
+            }
         }
     }
 }

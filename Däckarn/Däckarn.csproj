@@ -15,7 +15,21 @@ Ett program för att hantera en däckfirma.
 </Description>
 	<Copyright>Ameer Abdelakhwa, Andreas Lindström</Copyright>
 	<Company>$(Authors) Projekt Arbete</Company>
+	<PackageIcon>icons8-tire-64.png</PackageIcon>
+	<StartupObject>Däckarn.Program</StartupObject>
+	<ApplicationIcon>icons8-tire-64.ico</ApplicationIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="icons8-tire-64.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\icons8-tire-64.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\DackarnAPI\DackarnAPI.csproj" />

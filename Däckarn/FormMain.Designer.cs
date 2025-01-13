@@ -51,6 +51,7 @@
             label1 = new Label();
             lblDay = new Label();
             buttonDone = new Button();
+            columnService = new ColumnHeader();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -60,7 +61,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { arkivToolStripMenuItem, schemaToolStripMenuItem, bokningarToolStripMenuItem, hjälpToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(819, 28);
+            menuStrip1.Size = new Size(898, 28);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -91,7 +92,7 @@
             // 
             hanteraSchemaToolStripMenuItem.Name = "hanteraSchemaToolStripMenuItem";
             hanteraSchemaToolStripMenuItem.ShortcutKeys = Keys.F5;
-            hanteraSchemaToolStripMenuItem.Size = new Size(180, 22);
+            hanteraSchemaToolStripMenuItem.Size = new Size(159, 22);
             hanteraSchemaToolStripMenuItem.Text = "&Visa Schema";
             hanteraSchemaToolStripMenuItem.Click += hanteraSchemaToolStripMenuItem_Click;
             // 
@@ -143,19 +144,19 @@
             // omToolStripMenuItem
             // 
             omToolStripMenuItem.Name = "omToolStripMenuItem";
-            omToolStripMenuItem.Size = new Size(180, 22);
+            omToolStripMenuItem.Size = new Size(94, 22);
             omToolStripMenuItem.Text = "&Om";
             omToolStripMenuItem.Click += omToolStripMenuItem_Click;
             // 
             // listViewBookings
             // 
-            listViewBookings.Columns.AddRange(new ColumnHeader[] { columnDate, columnDone, columnName, columnPremium, columnRegNr, columnCar });
+            listViewBookings.Columns.AddRange(new ColumnHeader[] { columnDate, columnDone, columnName, columnPremium, columnService, columnRegNr, columnCar });
             listViewBookings.FullRowSelect = true;
             listViewBookings.GridLines = true;
             listViewBookings.Location = new Point(12, 52);
             listViewBookings.MultiSelect = false;
             listViewBookings.Name = "listViewBookings";
-            listViewBookings.Size = new Size(794, 359);
+            listViewBookings.Size = new Size(872, 359);
             listViewBookings.Sorting = SortOrder.Ascending;
             listViewBookings.TabIndex = 1;
             listViewBookings.UseCompatibleStateImageBehavior = false;
@@ -175,7 +176,7 @@
             // 
             columnName.Text = "Namn";
             columnName.TextAlign = HorizontalAlignment.Center;
-            columnName.Width = 250;
+            columnName.Width = 190;
             // 
             // columnPremium
             // 
@@ -224,11 +225,17 @@
             buttonDone.UseVisualStyleBackColor = true;
             buttonDone.Click += buttonDone_Click;
             // 
+            // columnService
+            // 
+            columnService.Text = "Tjänst";
+            columnService.TextAlign = HorizontalAlignment.Center;
+            columnService.Width = 120;
+            // 
             // FormMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(819, 447);
+            ClientSize = new Size(898, 447);
             Controls.Add(buttonDone);
             Controls.Add(lblDay);
             Controls.Add(label1);
@@ -272,5 +279,6 @@
         private ToolStripMenuItem hanteraSchemaToolStripMenuItem;
         private ColumnHeader columnDate;
         private Button buttonDone;
+        private ColumnHeader columnService;
     }
 }

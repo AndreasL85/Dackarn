@@ -1,4 +1,13 @@
-﻿using System;
+﻿/*
+ * Projektarbete i Objektorienterad programmering GIK299, HT24
+ * 
+ * Däckarn
+ * 
+ * Andreas Lindström
+ * Ameer Abdelakhwa
+ * 
+ */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
